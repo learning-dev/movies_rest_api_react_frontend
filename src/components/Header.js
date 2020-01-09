@@ -5,7 +5,7 @@ function Header() {
   return (
     <header style={headerStyle}>
       <h1>Movies Inventory</h1>
-      <Link style={linkStyle} to="/movies">Movies</Link> | <Link style={linkStyle} to="/directors">Directors</Link> 
+       {/* <Link style={linkStyle} to="/movies">Movies</Link> | <Link style={linkStyle} to="/directors">Directors</Link>  */}
     </header>
   )
 }
