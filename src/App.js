@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import Header from './components/Header';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
+import Header from './components/Header';
+import Movies from './components/Movies';
 import './App.css';
 
 
@@ -12,6 +13,22 @@ class  App extends Component {
       <div className="App">
         <Router>
           <Header />
+          <Route exact path="/" render={props => (
+              <React.Fragment>
+              </React.Fragment>
+            )} />
+          <Route exact path="/movies" render={props => (
+              <React.Fragment>
+                <Movies />
+              </React.Fragment>
+            )} />
+          <Route exact path="/directors" render={props => (
+             <React.Fragment>
+               <h1>List of Directors</h1>
+             </React.Fragment>
+
+          )} />
+            
         </Router>
       </div>
     );
