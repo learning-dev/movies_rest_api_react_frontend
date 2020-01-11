@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes  from 'prop-types';
 
-export class MovieItem extends Component {
+
+class MovieItem extends Component {
   
   render( ) {
     const { id, title, runtime, description} = this.props.movie;
@@ -17,10 +18,11 @@ export class MovieItem extends Component {
             {description}
           </p>
         </div>
-        <div className="runtime-btn">
+        <div className="runtime-btn-div">
           <p>
            { runtime } Minutes
           </p>
+          <button  style={updatebtnStyle}>Update</button>
           <button  style={btnStyle}>Delete</button>
         </div>
       </div>
@@ -37,6 +39,17 @@ const btnStyle = {
   cursor: 'pointer',
   float: 'right',
 }
+
+const updatebtnStyle = {
+  background: 'black',
+  color: '#fff',
+  border: 'node',
+  padding: '5px 10px',
+  borderRadius: '10%',
+  cursor: 'pointer',
+  float: 'left',
+}
+
 MovieItem.propTypes = {
   movie: PropTypes.object.isRequired
 }
