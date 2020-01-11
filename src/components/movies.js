@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 
 // function MoviesHeader() {
 //   return (
@@ -23,18 +24,24 @@ import { Link } from 'react-router-dom';
 // }
 
 
-
-
-
 class Movies extends Component {
+
+  state = {
+    movies : []
+  }
+  componentDidMount = () => {
+    this.getAllMovies()
+    
+  }
+
+  getAllMovies() {
+    axios.get('http://localhost:3000/api/movies/').then(res => {this.setState({movies: res.data}); console.log(this.state.movies)});
+  }
   
   render() {
-
-    return (
-        <React.Fragment>
-          <h1>List of Movies</h1>
-        </React.Fragment>
-    );
+    return this.state.movies.map((movie) =>(
+      <h3>{movie.title}</h3>      
+    ));
 
   }
 }

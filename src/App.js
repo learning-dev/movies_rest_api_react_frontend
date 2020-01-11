@@ -24,7 +24,7 @@ class  App extends Component {
             )} />
           <Route exact path="/directors" render={props => (
              <React.Fragment>
-               <h1>List of Directors</h1>
+               
              </React.Fragment>
 
           )} />
