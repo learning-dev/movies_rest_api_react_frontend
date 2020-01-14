@@ -23,7 +23,7 @@ class MovieItem extends Component {
            { runtime } Minutes
           </p>
           <button  style={updatebtnStyle}>Update</button>
-          <button  style={btnStyle}>Delete</button>
+          <button onClick={this.props.delMovies.bind(this, id)} style={btnStyle}>Delete</button>
         </div>
       </div>
     );

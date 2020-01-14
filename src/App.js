@@ -14,10 +14,7 @@ class  App extends Component {
       <div className="App">
         <Router>
           <Header />
-          <Route exact path="/" render={props => (
-              <React.Fragment>
-              </React.Fragment>
-            )} />
+          
           <Route exact path="/movies" render={props => (
               <React.Fragment>
                 <div className="movie-container">
