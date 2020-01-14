@@ -5,17 +5,22 @@ import MovieItem from './MovieItem';
 import PropTypes from 'prop-types';
 
 class Movies extends Component {
-
-  state = {
+  constructor(props) {
+    super(props);
+    this.state = {
       movies : []
     }
+    this.getAllMovies = this.getAllMovies.bind(this);
+    this.delMovies = this.delMovies.bind(this);
+  }
+
 
 
   componentDidMount = () => {
     this.getAllMovies();
   }
 
-  getAllMovies() {
+  getAllMovies () {
   axios.get('http://localhost:3000/api/movies/').then(res => {this.setState({movies: res.data}); });
   }
 
@@ -24,21 +29,13 @@ class Movies extends Component {
         .then( res => {
           if(res.status === 200) {
             axios.get('http://localhost:3000/api/movies/').then( getReq => {
-            this.setState({movies: getReq.data})
+            this.getAllMovies();
             })
           }
         });
   }
 
-  
-  // updateChange(newState) {
-
-  //     if( newState.length > 0 &&(JSON.stringify(newState) !== JSON.stringify(this.movies)) ) {
-  //       console.log('newstate', newState)
-  //       console.log(JSON.stringify(this.state))
-  //       this.setState({movies: [...newState]});
-  //     }
-  // }
+ 
 
   render() {
     return this.state.movies.map((movie) =>(
@@ -47,7 +44,5 @@ class Movies extends Component {
   }
 }
 
-// Movies.PropTypes = {
-//   movies : PropTypes.array.isRequired
-// }
+
 export default Movies;
