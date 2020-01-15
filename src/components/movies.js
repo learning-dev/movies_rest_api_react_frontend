@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import MovieItem from './MovieItem';
-import PropTypes from 'prop-types';
+
 
 class Movies extends Component {
   constructor(props) {
@@ -28,9 +28,7 @@ class Movies extends Component {
     axios.delete('http://localhost:3000/api/movies/'+id)
         .then( res => {
           if(res.status === 200) {
-            axios.get('http://localhost:3000/api/movies/').then( getReq => {
             this.getAllMovies();
-            })
           }
         });
   }

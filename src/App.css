@@ -90,3 +90,17 @@
   font-size: large;
   
 }
+
+.attribute-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr ;
+  font-weight: bold;
+}
+
+.year {
+  padding-right: 8%;
+}
+
+.rating {
+  padding-right: 20%;
+}

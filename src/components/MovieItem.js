@@ -6,6 +6,7 @@ class MovieItem extends Component {
   
   render( ) {
     const { id, title, runtime, description} = this.props.movie;
+    console.log(this.props.movie);
     return (
       <div className="movie-item">
         <div className="movie-title">
