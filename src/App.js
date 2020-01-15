@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
 import Header from './components/Header';
 import Movies from './components/Movies';
 import MovieDetails from './components/MovieDetails';
@@ -22,6 +22,8 @@ class  App extends Component {
                 </div>
               </React.Fragment>
             )} />
+          < Redirect from='/' to='/movies/' />
+
           
           <Route exact path="/movies/" render={props => (
               <React.Fragment>
