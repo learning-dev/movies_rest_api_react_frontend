@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Header from './components/Header';
-import Movies from './components/Movies';
+import Movies from './components/movies';
 import MovieDetails from './components/MovieDetails';
 import Directors from './components/Directors';
 import AddMovie from './components/addMovie';
