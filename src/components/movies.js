@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import axios from 'axios';
 import MovieItem from './MovieItem';
 
@@ -13,8 +12,6 @@ class Movies extends Component {
     this.getAllMovies = this.getAllMovies.bind(this);
     this.delMovies = this.delMovies.bind(this);
   }
-
-
 
   componentDidMount = () => {
     this.getAllMovies();
@@ -33,7 +30,6 @@ class Movies extends Component {
         });
   }
 
- 
 
   render() {
     return this.state.movies.map((movie) =>(
