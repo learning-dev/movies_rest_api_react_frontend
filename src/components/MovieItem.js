@@ -1,14 +1,16 @@
 import React, { Component } from 'react';
 import PropTypes  from 'prop-types';
+import {NavLink} from 'react-router-dom';
 
 
 class MovieItem extends Component {
   
   render( ) {
     const { id, title, runtime, description} = this.props.movie;
-    console.log(this.props.movie);
+   
     return (
-      <div className="movie-item">
+      <div  className="movie-item" >
+        
         <div className="movie-title">
           <p>
            {id}.   { title }
@@ -23,6 +25,7 @@ class MovieItem extends Component {
           <p>
            { runtime } Minutes
           </p>
+          <NavLink to= {'/movies/'+id}>Details</NavLink>
           <button  style={updatebtnStyle}>Update</button>
           <button onClick={this.props.delMovies.bind(this, id)} style={btnStyle}>Delete</button>
         </div>
