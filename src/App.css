@@ -104,3 +104,43 @@
 .rating {
   padding-right: 20%;
 }
+
+.form-container {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 20rem;  
+  font-weight: bold;
+}
+
+
+.field-container {
+  display: flex;
+  justify-content: space-between;
+  text-align: left;
+  width: 20rem;
+  padding: 10px;
+}
+
+.div-submit {
+  font-weight: bold;
+}
+.submit-btn {
+  -webkit-appearance: none;
+  width: 5em;  
+  height: 2em;
+  font-size: 1rem;
+  font-weight: 700;
+  float: right;
+}
+.input-textbox {
+  height:20px;
+  font-size:14px;
+}
+
+.input-textarea {
+  width: 9.25rem;
+  height: 2rem;
+}
+
