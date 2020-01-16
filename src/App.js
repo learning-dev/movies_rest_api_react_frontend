@@ -4,6 +4,7 @@ import Header from './components/Header';
 import Movies from './components/Movies';
 import MovieDetails from './components/MovieDetails';
 import Directors from './components/Directors';
+import AddMovie from './components/addMovie';
 import './App.css';
 
 
@@ -15,7 +16,14 @@ class  App extends Component {
       <div className="App">
         <Router>
           <Header />
-          <Route exact path="/movies/:id" render={props => (
+          <Route exact path="/movies/add" render={props => (
+              <React.Fragment>
+                <div className="movie-container">
+                  <AddMovie />
+                </div>
+              </React.Fragment>
+            )} />
+          <Route exact path="/movies/:id(\\d+)" render={props => (
               <React.Fragment>
                 <div className="movie-container">
                   <MovieDetails params={props.match.params}/>
@@ -30,6 +38,8 @@ class  App extends Component {
                 </div>
               </React.Fragment>
             )} />
+
+            
           <Route exact path="/directors" render={props => (
              <React.Fragment>
                <div className="director-container">
