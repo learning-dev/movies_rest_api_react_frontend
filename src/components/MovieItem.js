@@ -26,7 +26,7 @@ class MovieItem extends Component {
            { runtime } Minutes
           </p>
           <NavLink to= {'/movies/'+id}>Details</NavLink>
-          <button  style={updatebtnStyle}>Update</button>
+          <button onClick={this.props.updateMovie.bind(this,id)} style={updatebtnStyle}>Update</button>
           <button onClick={this.props.delMovies.bind(this, id)} style={btnStyle}>Delete</button>
         </div>
       </div>

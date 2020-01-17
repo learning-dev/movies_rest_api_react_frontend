@@ -5,6 +5,7 @@ import Movies from './components/movies';
 import MovieDetails from './components/MovieDetails';
 import Directors from './components/Directors';
 import AddMovie from './components/addMovie';
+import UpdateMovie from './components/updateMovie';
 import './App.css';
 
 
@@ -34,10 +35,17 @@ class  App extends Component {
                 </React.Fragment>
               )} />
 
-            <Route  exact path="/movies/:id/" render={props => (
+            <Route  exact path="/movies/:id/" strict render={props => (
                 <React.Fragment>
                   <div className="movie-container">
                     <MovieDetails params={props.match.params}/>
+                  </div>
+                </React.Fragment>
+              )} />
+            <Route  exact path="/movies/:id/update" render={props => (
+                <React.Fragment>
+                  <div className="movie-container">
+                    <UpdateMovie params={props.match.params}/>
                   </div>
                 </React.Fragment>
               )} />

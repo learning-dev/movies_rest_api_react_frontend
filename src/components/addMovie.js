@@ -27,9 +27,7 @@ class AddMovie extends Component {
 
     onMovieSubmit(event) {
       event.preventDefault();
-      console.log(this.state);
       let dataToSend = JSON.stringify(this.state);
-      console.log('submitting movie')
       fetch('http://localhost:3000/api/movies/', {
         method:'POST',
         headers: {
