@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch, NavLink} from 'react-router-dom';
 import Header from './components/Header';
 import Movies from './components/movies';
 import MovieDetails from './components/MovieDetails';
@@ -29,7 +29,7 @@ class  App extends Component {
             <Route path="/movies/add/" exact render={props => (
                 <React.Fragment>
                   <div className="movie-container" >
-                    <AddMovie />
+                    <AddMovie props={props} />
                   </div>
                 </React.Fragment>
               )} />
@@ -44,6 +44,11 @@ class  App extends Component {
             
             <Route exact path="/movies/" render={props => (
                 <React.Fragment>
+                  <div className='container-btn-add-movie' >
+                    <button className='add-movie-btn'>
+                      <NavLink  className='add-movie-link' to='/movies/add'>Add Movie</NavLink>
+                    </button>  
+                  </div>
                   <div className="movie-container">
                     <Movies />
                   </div>

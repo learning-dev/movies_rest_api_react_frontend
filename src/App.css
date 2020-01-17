@@ -143,4 +143,22 @@
   width: 9.25rem;
   height: 2rem;
 }
+.add-movie-btn {
+background: black;
+
+padding: 5px 10px;
+border-radius: 10%;
+cursor: pointer;
+margin: 10px;
+font-size: large;
+}
+
+.add-movie-link {
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  
+}
+
+
+
 

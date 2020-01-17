@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { withRouter } from 'react-router-dom';
 
 
 
@@ -43,7 +44,7 @@ class AddMovie extends Component {
         })
       .then((datajson ) => {
           console.log(datajson);
-          
+          this.props.history.push('/movies'); 
       });     
     }
     onChange(event) {
@@ -108,5 +109,5 @@ class AddMovie extends Component {
 
 
 
-export default AddMovie;
+export default  withRouter(AddMovie);
 
