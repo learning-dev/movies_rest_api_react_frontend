@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import Header from './components/Header';
 import Movies from './components/movies';
 import MovieDetails from './components/MovieDetails';
@@ -28,7 +28,7 @@ class  App extends Component {
             )}/>
             <Route path="/movies/add/" exact render={props => (
                 <React.Fragment>
-                  <div className="movie-container">
+                  <div className="movie-container" >
                     <AddMovie />
                   </div>
                 </React.Fragment>
