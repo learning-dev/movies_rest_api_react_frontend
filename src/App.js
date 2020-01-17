@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Header from './components/Header';
 import Movies from './components/movies';
 import MovieDetails from './components/MovieDetails';
@@ -16,38 +16,51 @@ class  App extends Component {
       <div className="App">
         <Router>
           <Header />
-          <Route exact path="/movies/add" render={props => (
-              <React.Fragment>
-                <div className="movie-container">
-                  <AddMovie />
-                </div>
-              </React.Fragment>
-            )} />
-          <Route exact path="/movies/:id(\\d+)" render={props => (
-              <React.Fragment>
-                <div className="movie-container">
-                  <MovieDetails params={props.match.params}/>
-                </div>
-              </React.Fragment>
-            )} />
-          
-          <Route exact path="/movies/" render={props => (
-              <React.Fragment>
-                <div className="movie-container">
-                  <Movies />
-                </div>
-              </React.Fragment>
-            )} />
 
+          <Switch>
+            <Route path="/" exact render={props => (
+              <React.Fragment>
+              <div className="movie-container">
+                <Movies />
+              </div>
+              </React.Fragment>
+
+            )}/>
+            <Route path="/movies/add/" exact render={props => (
+                <React.Fragment>
+                  <div className="movie-container">
+                    <AddMovie />
+                  </div>
+                </React.Fragment>
+              )} />
+
+            <Route  exact path="/movies/:id/" render={props => (
+                <React.Fragment>
+                  <div className="movie-container">
+                    <MovieDetails params={props.match.params}/>
+                  </div>
+                </React.Fragment>
+              )} />
             
-          <Route exact path="/directors" render={props => (
-             <React.Fragment>
-               <div className="director-container">
-                <Directors />
-               </div>
-             </React.Fragment>
+            <Route exact path="/movies/" render={props => (
+                <React.Fragment>
+                  <div className="movie-container">
+                    <Movies />
+                  </div>
+                </React.Fragment>
+              )} />
 
-          )} />
+              
+            <Route exact path="/directors" render={props => (
+              <React.Fragment>
+                <div className="director-container">
+                  <Directors />
+                </div>
+              </React.Fragment>
+
+            )} />
+          </Switch>
+          
             
         </Router>
       </div>
