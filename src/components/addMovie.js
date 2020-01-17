@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 
 class AddMovie extends Component {
-
+    state = {
+      newMovie: {}
+    }
     render() {
       return (
         <form className="form-container">
@@ -11,11 +13,19 @@ class AddMovie extends Component {
           </div>
           <div className="field-container">
             <label>Description:</label>
-            <textarea type="text" name='title' placeholder='Description' className='input-textarea'></textarea>
+            <textarea type="text" name='description' placeholder='Description' className='input-textarea'></textarea>
           </div>
           <div className="field-container">
             <label>Runtime:</label>
-            <input type="text" name='title' placeholder='Runtime in mins' className='input-textbox'/>
+            <input type="text" name='runtime' placeholder='Runtime in mins' className='input-textbox'/>
+          </div>
+          <div className="field-container">
+            <label>Rating:</label>
+            <input type="text" name='rating' placeholder='Rating (out of 10)' className='input-textbox'/>
+          </div>
+          <div className="field-container">
+            <label>Genre:</label>
+            <input type="text" name='genre' placeholder='Genre' className='input-textbox'/>
           </div>
           <div className="field-container">
             <label>Metascore:</label>
