@@ -35,7 +35,7 @@ class  App extends Component {
                 </React.Fragment>
               )} />
 
-            <Route  exact path="/movies/:id/" strict render={props => (
+            <Route  exact path="/movies/:id/"  render={props => (
                 <React.Fragment>
                   <div className="movie-container">
                     <MovieDetails params={props.match.params}/>
