@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-
+import { withRouter } from 'react-router-dom';
 
 class UpdateMovie extends Component {
     constructor(props) {
@@ -49,11 +49,25 @@ class UpdateMovie extends Component {
         })
       .then((datajson ) => {
           console.log(datajson);
+          this.props.history.push(`/movies/${this.state.movie.id}/`)
+          
           
       });     
     }
     onChange(event) {
-      this.setState({[event.target.name]: event.target.value })
+      event.persist();
+      let obj = {}
+      obj[event.target.name] = event.target.value;
+      
+      this.setState((prevState)=>{
+        console.log('pre', prevState)
+        let movie = Object.assign({}, prevState.movie);
+        console.log('et', movie)
+        
+        movie[event.target.name] = event.target.value;
+        console.log(movie);
+        return {movie};
+        });
     }
 
     render() {
@@ -114,5 +128,5 @@ class UpdateMovie extends Component {
 
 
 
-export default UpdateMovie;
+export default withRouter (UpdateMovie);
 

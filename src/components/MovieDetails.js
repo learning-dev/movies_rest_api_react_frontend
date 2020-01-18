@@ -17,6 +17,7 @@ class MovieDetails extends Component {
 
   getMovie () {
    let movieId = this.props.params.id;
+   console.log('movie', movieId)
   axios.get('http://localhost:3000/api/movies/' + movieId)
         .then(res => {
                       this.setState({movie: res.data}); 
